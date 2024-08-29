@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-family: 'Montserrat !important';
+	line-height: 1.5;
+	font-weight: 400;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	height: 100%;
+}
+
+#root {
+	min-height: 100vh;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+}
+
+input:focus {
+	outline-color: #416cf6;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url('/public/images/chevron-down.svg');
+	background-repeat: no-repeat;
+	background-position: right center;
+	padding-right: 2em;
+}
+
+.dot {
+	background-color: #edf0f9;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 0 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-top: 1vh;
+}
+
+/*  */
+.slick-dots li.slick-active .dot {
+	background-color: #416cf6;
+}
+
+.slider-container {
+	position: relative;
+}
+
+.slick-prev,
+.slick-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+}
+.slick-prev {
+	left: -40px;
+}
+
+.slick-next {
+	right: -40px;
+}
+
+@media (max-width: 768px) {
+	.slick-dots {
+		display: none;
+	}
+	.dot {
+		width: 3px;
+		height: 3px;
+		margin: 0;
+		/* visibility: hidden; */
+		/* display: none; */
+	}
+	.slick-prev {
+		left: 0px;
+		top: 90px;
+		left: 35%;
+	}
+
+	.slick-next {
+		top: 90px;
+		right: 0px;
+		right: 35%;
+	}
+}
+
+.slick-prev::before {
+	content: url('/public/images/chevron-down.svg');
+	transform: rotate(90deg);
+	font-size: 3vh;
+	color: #416cf6;
+	font-weight: 900;
+}
+
+.slick-next::before {
+	content: url('/public/images/chevron-down.svg');
+	margin-left: 5px;
+	transform: rotate(-90deg);
+	font-size: 3vh;
+	color: #416cf6;
+	font-weight: 900;
+}
+
+input[type='radio'] {
+	accent-color: #416cf6;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:root {
+		scroll-behavior: smooth;
+	}
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+
+.scrollbar-hide {
+	-ms-overflow-style: none; /* Internet Explorer и Edge */
+	scrollbar-width: none; /* Firefox */
+}
